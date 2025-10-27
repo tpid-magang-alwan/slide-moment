@@ -20,7 +20,7 @@ function App() {
     <>
     <Router>
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/event-galleries" element={<Event_Galleries />} />
         <Route path="/event" element={<Event />} />
         <Route path="/sesi" element={<Sesi />} />

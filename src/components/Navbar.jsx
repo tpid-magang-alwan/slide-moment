@@ -8,7 +8,7 @@ export default function Navbar() {
     <nav className="flex items-center justify-between w-full bg-white shadow-md py-3 px-6 md:px-24 relative">
       {/* Logo */}
       <div className="flex items-center">
-        <a href="/home">
+        <a href="/">
           <img
             src="/logo-slidemoment.jpeg"
             alt="Slide Moment Logo"
