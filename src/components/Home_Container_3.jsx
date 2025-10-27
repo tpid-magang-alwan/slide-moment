@@ -28,9 +28,9 @@ export default function Home_Container_3() {
   const content = {
     heading: "Moment",
     paragraph1:
-      "Jadikan setiap momen berharga tak terlupakan. Kami hadir untuk membantu Anda mengenang kembali kenangan manis, karena kami percaya, yang kita ingat bukanlah hari, melainkan momen-momen istimewa. Sebuah foto bukan hanya selembar kertas, melainkan jendela menuju kenangan. Kami bantu Anda merawat dan merayakan setiap momen, karena kenangan bukanlah tentang hari yang terlewati, melainkan tentang momen-momen yang abadi.",
+      "Jadikan setiap momen berharga tak terlupakan. Kami hadir karena percaya yang kita ingat bukanlah hari, melainkan momen-momen istimewa. Sebuah foto adalah jendela menuju kenangan. Kami bantu Anda merawat dan merayakan setiap momen, karena kenangan bukanlah tentang hari yang terlewati, melainkan tentang momen-momen yang abadi.",
     paragraph2:
-      "Dengan layanan kami, Anda dapat dengan mudah mengabadikan dan merayakan setiap momen penting dalam hidup Anda. Dari perayaan ulang tahun, pernikahan megah, hingga kumpul keluarga atau petualangan seru, kami siap membantu Anda menciptakan album kenangan yang akan selalu menghangatkan hati.",
+      "Dengan layanan kami, Anda dapat dengan mudah mengabadikan dan merayakan setiap momen penting dalam hidup Anda. Dengan Kami Anda akan menciptakan album kenangan yang akan selalu menghangatkan hati.",
     button: "Book Now",
   };
 
@@ -53,16 +53,16 @@ export default function Home_Container_3() {
       </div>
 
       {/* Bagian Kanan: Teks dan Tombol */}
-      <div className="w-full md:w-1/2 p-5 flex justify-center items-center">
+      <div className="w-full md:w-1/2 flex justify-center items-center">
         <div className="w-[90%] md:w-4/5 bg-[#ffffff] p-5 sm:p-6 rounded-md flex flex-col">
           <div>
-            <h2 className="text-2xl sm:text-2xl md:text-3xl font-semibold mb-4 md:mb-6 text-center md:text-left">
+            <h2 className="text-xl sm:text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center md:text-left">
               {content.heading}
             </h2>
-            <p className="text-sm md:text-xs text-[#0C0202] leading-relaxed text-justify md:text-left mb-3">
+            <p className="text-sm md:text-sm text-[#0C0202] leading-relaxed text-justify md:text-left mb-3">
               {content.paragraph1}
             </p>
-            <p className="text-sm md:text-xs text-[#0C0202] leading-relaxed text-justify md:text-left mb-5">
+            <p className="text-sm md:text-sm text-[#0C0202] leading-relaxed text-justify md:text-left mb-5">
               {content.paragraph2}
             </p>
           </div>

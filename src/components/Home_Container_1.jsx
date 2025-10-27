@@ -5,7 +5,7 @@ export default function Home_Container_1() {
   const content = {
     image: "/img-1.jpeg",
     heading: "We Remember Moments, Not Days",
-    text: "Jadikan setiap momen berharga tak terlupakan. Kami hadir untuk membantu Anda mengenang kembali setiap kenangan, karena kami percaya, yang kita ingat bukanlah hari, melainkan momen-momen istimewa. Sebuah foto bukan hanya selembar kertas, melainkan jendela menuju kenangan. Kami bantu Anda merawat dan merayakan setiap momen, karena kenangan bukanlah tentang hari yang terlewati, melainkan tentang momen-momen yang abadi.",
+    text: "Jadikan setiap momen berharga tak terlupakan. Kami hadir untuk membantu Anda mengenang kembali setiap kenangan, karena kami percaya, yang kita ingat bukanlah hari, melainkan momen-momen istimewa. Sebuah foto bukan hanya selembar kertas, melainkan jendela menuju kenangan. kenangan ialah tentang momen-momen yang abadi.",
     button: "Event Galleries",
   };
 
@@ -27,7 +27,7 @@ export default function Home_Container_1() {
       <div className="w-full md:w-1/2 flex justify-center items-center px-4 md:px-8">
         <div className="w-full sm:w-4/5 bg-[#ffffff] p-5 sm:p-6 rounded-lg flex flex-col">
           <div>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 md:mb-6 text-center md:text-left">
+            <h2 className="text-xl sm:text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center md:text-left">
               {content.heading}
             </h2>
             <p className="text-sm md:text-sm text-[#0C0202] leading-relaxed mb-5">

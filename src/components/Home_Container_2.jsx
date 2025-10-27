@@ -58,7 +58,7 @@ export default function Home_Container_2() {
       {/* Bagian Produk */}
       <div className="w-full md:w-1/2 p-4 flex justify-center">
         <div className="w-[90%] md:w-4/5 max-h-[500px] md:h-[85%] flex flex-col overflow-y-auto">
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 md:mb-6 text-center md:text-left">
+          <h3 className="text-xl sm:text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center md:text-left">
             Our Product
           </h3>
 
