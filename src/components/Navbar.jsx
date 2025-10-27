@@ -6,17 +6,27 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  // Fungsi scroll halus ke elemen dengan ID tertentu
+  // 🔹 Fungsi scroll halus tanpa kedip (untuk Our Product)
   const scrollToSection = (id) => {
     setTimeout(() => {
       const section = document.getElementById(id);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
 
-        // Tambahkan kelas 'blink' selama 1.5 detik
-        section.classList.add("blink");
+  // 🔹 Fungsi scroll + kedip (untuk Contact)
+  const scrollToContact = () => {
+    setTimeout(() => {
+      const footer = document.getElementById("Contact");
+      if (footer) {
+        footer.scrollIntoView({ behavior: "smooth" });
+
+        // Efek berkedip sementara
+        footer.classList.add("blink");
         setTimeout(() => {
-          section.classList.remove("blink");
+          footer.classList.remove("blink");
         }, 1500);
       }
     }, 100);
@@ -56,7 +66,7 @@ export default function Navbar() {
           Event Galleries
         </Link>
 
-        {/* Our Product → ke Home dan scroll ke OurProduct */}
+        {/* ✅ Our Product → scroll ke OurProduct (tanpa kedip) */}
         <Link
           to="/"
           onClick={() => scrollToSection("OurProduct")}
@@ -65,10 +75,10 @@ export default function Navbar() {
           Our Product
         </Link>
 
-        {/* Contact → scroll ke footer (id=Contact) di halaman manapun */}
+        {/* ✅ Contact → scroll ke footer dengan kedip */}
         <Link
-          to={location.pathname} // tetap di halaman saat ini
-          onClick={() => scrollToSection("Contact")}
+          to={location.pathname}
+          onClick={scrollToContact}
           className="hover:text-indigo-600 py-2 px-4"
         >
           Contact
