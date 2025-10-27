@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Sesi_Container_1() {
-  const imageUrl = "/img-21.jpeg"; 
+  const imageUrl = "/img-14.jpeg"; 
   const titleText = "The Wedding Of Fufu & Fafa";
   const locationText = "Hotel Tentrem Yogyakarta";
   const dateText = "15 Januari 2023";

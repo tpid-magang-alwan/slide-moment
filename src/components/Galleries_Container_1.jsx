@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Galleries_Container_1() {
-  const imageUrl = "/img-21.jpeg"; 
+  const imageUrl = "/img-17.jpg"; 
   const titleText = "EVENT GALLERIES";
 
 
