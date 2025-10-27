@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // ✅ tambahkan import Link
 
 export default function Home_Container_1() {
   const content = {
@@ -34,9 +35,13 @@ export default function Home_Container_1() {
             </p>
           </div>
 
-          <button className="w-full py-4 sm:w-auto bg-[#f6f6f6] text-[#0C0202] text-ms md:text-xs font-semibold rounded-full shadow-sm hover:bg-indigo-700 hover:text-white transition duration-300">
+          {/* ✅ Tombol yang menaut ke /event-galleries */}
+          <Link
+            to="/event-galleries"
+            className="w-full py-4 sm:w-auto bg-[#f6f6f6] text-[#0C0202] text-ms md:text-xs font-semibold rounded-full shadow-sm hover:bg-indigo-700 hover:text-white transition duration-300 text-center"
+          >
             {content.button}
-          </button>
+          </Link>
         </div>
       </div>
 

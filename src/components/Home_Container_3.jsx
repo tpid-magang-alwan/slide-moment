@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom"; // ✅ siapkan untuk navigasi internal
+
 export default function Home_Container_3() {
   const images = [
     "/img-1.jpeg",
@@ -65,9 +67,15 @@ export default function Home_Container_3() {
             </p>
           </div>
 
-          <button className="w-full sm:w-auto py-3 px-6 bg-[#f6f6f6] text-[#0C0202] text-ms md:text-xs font-semibold rounded-full shadow-sm hover:bg-indigo-700 hover:text-white transition duration-300 mx-auto md:mx-0">
+          {/* Tombol WhatsApp */}
+          <a
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto py-3 px-6 bg-[#f6f6f6] text-[#0C0202] text-ms md:text-xs font-semibold rounded-full shadow-sm hover:bg-indigo-700 hover:text-white transition duration-300 mx-auto md:mx-0 text-center"
+          >
             {content.button}
-          </button>
+          </a>
         </div>
       </div>
     </div>

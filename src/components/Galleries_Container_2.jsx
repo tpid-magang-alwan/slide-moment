@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // ✅ tambahkan import Link
 
 export default function Galleries_Container_2() {
   const events = [
@@ -34,7 +35,6 @@ export default function Galleries_Container_2() {
       link: "/event/4",
       type: ""
     },
-    // tambahkan hingga 16 data
     {
       id: 5,
       title: "Company Gathering",
@@ -136,9 +136,9 @@ export default function Galleries_Container_2() {
   return (
     <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 px-4 sm:px-12 md:px-24 py-10 capitalize">
       {events.map((event) => (
-        <a
+        <Link
           key={event.id}
-          href={event.link}
+          to={event.link} // ✅ ubah dari href ke to
           className="flex flex-col items-center hover:shadow-lg transition duration-300 hover:scale-105 overflow-hidden"
         >
           {/* Gambar Event */}
@@ -161,7 +161,7 @@ export default function Galleries_Container_2() {
           <div className="mb-4 text-sm text-gray-500 text-center px-2">
             {event.location}
           </div>
-        </a>
+        </Link>
       ))}
     </div>
   );
