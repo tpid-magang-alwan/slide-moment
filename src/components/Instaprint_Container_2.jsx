@@ -76,7 +76,7 @@ export default function Instaprint_Container_2() {
           </div>
 
           {/* Teks */}
-          <div className="w-full sm:w-1/2 flex flex-col justify-center px-3 sm:px-6 py-2 sm:py-4 overflow-hidden">
+          <div id="Template" className="w-full sm:w-1/2 flex flex-col justify-center px-3 sm:px-6 py-2 sm:py-4 overflow-hidden">
             <h3 className="text-base sm:text-xl font-bold mb-2 sm:mb-4 text-[#0C0202]">
               Available Template
             </h3>

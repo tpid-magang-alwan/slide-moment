@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Home_Container_2() {
+  const navigate = useNavigate();
+
   const products = [
     {
       id: 1,
@@ -29,12 +31,24 @@ export default function Home_Container_2() {
     { thumb: "/img-7.jpeg", full: "/photobooth", alt: "", title: "Photobooth" },
     { thumb: "/img-13.jpg", full: "/instaprint", alt: "", title: "Instaprint" },
     { thumb: "/img-15.jpeg", full: "/photo-move", alt: "", title: "Photo on the Move" },
-    { thumb: "/img-16.jpg", full: "/instaprint", alt: "", title: "Template" },
+    { thumb: "/img-16.jpg", full: "/instaprint#Template", alt: "", title: "Template" }, // 🔗 ubah link Template
   ];
+
+  // Fungsi untuk navigasi ke Instaprint + scroll ke id Template
+  const handleTemplateClick = (e) => {
+    e.preventDefault();
+    navigate("/instaprint");
+    setTimeout(() => {
+      const section = document.getElementById("Template");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 300); // waktu tunggu agar halaman sempat dimuat
+  };
 
   return (
     <div
-      id="OurProduct" // ✅ tambahkan ID di sini
+      id="OurProduct"
       className="flex flex-col md:flex-row w-full items-center text-[#0C0202] overflow-hidden py-8 md:py-0"
     >
       {/* Bagian Produk */}
@@ -65,25 +79,42 @@ export default function Home_Container_2() {
       {/* Bagian Galeri */}
       <div className="md:w-1/2 justify-center items-center">
         <div className="grid grid-cols-2 gap-1 w-[85%] mx-auto">
-          {gallery.map(({ thumb, full, alt, title }, i) => (
-            <Link
-              key={i}
-              to={full}
-              className="relative group overflow-hidden h-50"
-            >
-              <img
-                src={thumb}
-                alt={alt}
-                className="w-full h-full align-middle object-cover transition duration-300 group-hover:brightness-110"
-              />
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition duration-300"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-white text-md sm:text-base font-semibold text-center px-2">
-                  {title}
-                </span>
-              </div>
-            </Link>
-          ))}
+          {gallery.map(({ thumb, full, alt, title }, i) =>
+            title === "Template" ? (
+              // 🔗 Khusus Template → gunakan tombol custom agar scroll ke id di Instaprint
+              <button
+                key={i}
+                onClick={handleTemplateClick}
+                className="relative group overflow-hidden h-50 cursor-pointer"
+              >
+                <img
+                  src={thumb}
+                  alt={alt}
+                  className="w-full h-full align-middle object-cover transition duration-300 group-hover:brightness-110"
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition duration-300"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-white text-md sm:text-base font-semibold text-center px-2">
+                    {title}
+                  </span>
+                </div>
+              </button>
+            ) : (
+              <Link key={i} to={full} className="relative group overflow-hidden h-50">
+                <img
+                  src={thumb}
+                  alt={alt}
+                  className="w-full h-full align-middle object-cover transition duration-300 group-hover:brightness-110"
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition duration-300"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-white text-md sm:text-base font-semibold text-center px-2">
+                    {title}
+                  </span>
+                </div>
+              </Link>
+            )
+          )}
         </div>
       </div>
     </div>
