@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // ✅ tambahkan import Link
+import { Link } from "react-router-dom";
 
 export default function Home_Container_2() {
   const products = [
@@ -16,45 +16,27 @@ export default function Home_Container_2() {
     {
       id: 3,
       title: "Photo on the Move",
-      desc: "Jangan lewatkan satu pun momen penting di acara Anda. Layanan kami akan berkeliling mengabadikan setiap sudut acara, lalu langsung mencetak foto di tempat. Semua tamu bisa membawa pulang kenang-kenangan tanpa perlu antre di satu tempat.",
+      desc: "Jangan lewatkan satu pun momen penting di acara Anda. Layanan kami akan berkeliling mengabadikan setiap sudut acara, lalu langsung mencetak foto di tempat.",
     },
     {
       id: 4,
       title: "Template",
-      desc: "Pilih dari berbagai desain bingkai dan tata letak eksklusif untuk mempercantik foto Anda. Buat cetakan foto Anda semakin berkesan dengan desain unik yang dapat disesuaikan dengan tema acara.",
+      desc: "Pilih dari berbagai desain bingkai dan tata letak eksklusif untuk mempercantik foto Anda. Buat cetakan foto Anda semakin berkesan dengan desain unik.",
     },
   ];
 
-  // ✅ perbaiki tautan agar sesuai dengan rute React Router
   const gallery = [
-    {
-      thumb: "/img-7.jpeg",
-      full: "/photobooth",
-      alt: "",
-      title: "Photobooth",
-    },
-    {
-      thumb: "/img-13.jpg",
-      full: "/instaprint",
-      alt: "",
-      title: "Instaprint",
-    },
-    {
-      thumb: "/img-15.jpeg",
-      full: "/photo-move",
-      alt: "",
-      title: "Photo on the Move",
-    },
-    {
-      thumb: "/img-16.jpg",
-      full: "/instaprint", // ✅ Template diarahkan ke Instaprint
-      alt: "",
-      title: "Template",
-    },
+    { thumb: "/img-7.jpeg", full: "/photobooth", alt: "", title: "Photobooth" },
+    { thumb: "/img-13.jpg", full: "/instaprint", alt: "", title: "Instaprint" },
+    { thumb: "/img-15.jpeg", full: "/photo-move", alt: "", title: "Photo on the Move" },
+    { thumb: "/img-16.jpg", full: "/instaprint", alt: "", title: "Template" },
   ];
 
   return (
-    <div className="flex flex-col md:flex-row w-full items-center text-[#0C0202] overflow-hidden py-8 md:py-0">
+    <div
+      id="OurProduct" // ✅ tambahkan ID di sini
+      className="flex flex-col md:flex-row w-full items-center text-[#0C0202] overflow-hidden py-8 md:py-0"
+    >
       {/* Bagian Produk */}
       <div className="w-full md:w-1/2 p-4 flex justify-center">
         <div className="w-[90%] md:w-4/5 max-h-[500px] md:h-[85%] flex flex-col overflow-y-auto">
@@ -86,7 +68,7 @@ export default function Home_Container_2() {
           {gallery.map(({ thumb, full, alt, title }, i) => (
             <Link
               key={i}
-              to={full} // ✅ gunakan Link to
+              to={full}
               className="relative group overflow-hidden h-50"
             >
               <img
@@ -94,11 +76,7 @@ export default function Home_Container_2() {
                 alt={alt}
                 className="w-full h-full align-middle object-cover transition duration-300 group-hover:brightness-110"
               />
-
-              {/* Lapisan gelap */}
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition duration-300"></div>
-
-              {/* Judul di atas gambar */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <span className="text-white text-md sm:text-base font-semibold text-center px-2">
                   {title}
