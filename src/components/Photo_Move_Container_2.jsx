@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Photobooth_Container_2() {
+export default function Photo_Move_Container_2() {
   const items = [
     {
       id: 1,
@@ -38,10 +38,10 @@ export default function Photobooth_Container_2() {
         {items.map((item) => (
           <div
             key={item.id}
-            className="flex flex-col sm:flex-row items-center justify-center bg-white rounded-md transition duration-300 ease-in-out hover:shadow-xl overflow-hidden p-3 sm:p-4 w-[350px] h-[350px] sm:w-[350px] sm:h-[170px] lg:w-[600px] lg:h-[300px]"
+            className="flex flex-col sm:flex-row items-center justify-center bg-white rounded-md transition duration-300 ease-in-out hover:shadow-xl overflow-hidden p-3 sm:p-4 w-full sm:w-[500px] lg:w-[600px] h-auto"
           >
             {/* Gambar */}
-            <div className="w-full sm:w-1/2 h-1/2 sm:h-full flex-shrink-0">
+            <div className="w-full sm:w-1/2 h-[200px] sm:h-full flex-shrink-0">
               <img
                 src={item.imageUrl}
                 alt={`Gambar ${item.title}`}
@@ -50,11 +50,11 @@ export default function Photobooth_Container_2() {
             </div>
 
             {/* Teks */}
-            <div className="w-full sm:w-1/2 flex flex-col justify-center px-3 sm:px-6 py-2 sm:py-4 overflow-hidden">
-              <h3 className="text-base sm:text-base font-bold mb-2 sm:mb-4 text-[#0C0202] truncate">
+            <div className="w-full sm:w-1/2 flex flex-col justify-center px-3 sm:px-6 py-2 sm:py-4">
+              <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-4 text-[#0C0202]">
                 {item.title}
               </h3>
-              <p className="text-xs sm:text-sm text-[#0C0202] line-clamp-6">
+              <p className="text-xs sm:text-sm text-[#0C0202]">
                 {item.description}
               </p>
             </div>
