@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // ✅ tambahkan import Link
+import { Link } from "react-router-dom";
 
 export default function Home_Container_1() {
   const content = {
@@ -14,7 +14,8 @@ export default function Home_Container_1() {
       
       {/* Bagian Kiri: Gambar */}
       <div className="w-full md:w-1/2 flex justify-center items-center px-4 md:px-6 mb-6 md:mb-0">
-        <div className="w-4/5 h-[300px] sm:h-[280px] md:h-[300px] max-w-full overflow-hidden shadow-sm">
+        {/* ✅ Rasio tinggi dikoreksi agar tetap persegi panjang di Android */}
+        <div className="w-4/5 h-[200px] sm:h-[260px] md:h-[300px] max-w-full overflow-hidden shadow-sm">
           <img
             src={content.image}
             alt="Moment"
@@ -35,7 +36,6 @@ export default function Home_Container_1() {
             </p>
           </div>
 
-          {/* ✅ Tombol yang menaut ke /event-galleries */}
           <Link
             to="/event-galleries"
             className="w-full py-4 sm:w-auto bg-[#f6f6f6] text-[#0C0202] text-ms md:text-xs font-semibold rounded-full shadow-sm hover:bg-indigo-700 hover:text-white transition duration-300 text-center"
