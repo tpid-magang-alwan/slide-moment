@@ -13,14 +13,11 @@ html {
 }
 
 /* Efek blink (berkedip) */
-.blink {
-  animation: blinkEffect 0.5s ease-in-out 7; /* kedip 3x */
-}
-
+/* .blink {animation: blinkEffect 0.5s ease-in-out 7; } */
+/* 
 @keyframes blinkEffect {
   0%, 100% { background-color: transparent; }
-  50% { background-color: rgba(67, 56, 202, 0.3); } /* kuning lembut */
-}
+  50% { background-color: rgba(67, 56, 202, 0.3); }} */
 
 /* 
 :root {
