@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Photobooth_Container_2() {
+export default function Photo_Move_Container_2() {
   const items = [
     {
       id: 1,
@@ -30,61 +30,49 @@ export default function Photobooth_Container_2() {
       description:
         "Tandai dan kenali orang-orang penting di setiap foto Anda. Dengan fitur Tag, Anda dapat dengan mudah menandai teman, keluarga, atau pasangan di setiap gambar yang diunggah. Ini bukan hanya membantu orang lain mengenali siapa saja yang ada di dalam foto, tetapi juga mempermudah mereka yang ditandai untuk menemukan foto mereka sendiri.",
     },
+    {
+      id: 5,
+      imageUrl: "/img-12.jpeg",
+      title: "Available Template",
+      description:
+        "Kami menawarkan beragam pilihan desain bingkai dan tata letak yang siap pakai untuk memenuhi setiap kebutuhan kreatif Anda. Dengan Template yang tersedia ini, Anda bisa memilih gaya yang paling sesuai dengan tema acara Anda, mulai dari yang minimalis dan modern hingga yang penuh ornamen.",
+    },
   ];
 
   return (
     <div className="p-3 bg-[#f6f6f6]">
       {/* Grid utama */}
-      <div className="grid m-2 sm:m-8 lg:m-16 grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 content-center justify-items-center">
-        {items.map((item) => (
+      <div className="grid m-2 sm:m-8 lg:m-16 grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center">
+        {items.map((item, index) => (
           <div
             key={item.id}
-            className="flex flex-col sm:flex-row items-center justify-center bg-white rounded-md transition duration-300 ease-in-out hover:shadow-xl overflow-hidden p-3 sm:p-4 w-full sm:w-[500px] lg:w-[600px] h-auto"
+            className={`
+              flex flex-col sm:flex-row items-stretch bg-white rounded-xl 
+              transition duration-300 ease-in-out hover:shadow-xl overflow-hidden 
+              w-full sm:w-[500px] lg:w-[600px] h-auto sm:h-[260px]
+              ${index === items.length - 1 ? "sm:col-span-2 justify-self-center" : ""}
+            `}
           >
             {/* Gambar */}
-            <div className="w-full sm:w-1/2 h-[200px] sm:h-full flex-shrink-0">
+            <div className="w-full sm:w-1/2 p-3 aspect-[3/2] sm:aspect-auto">
               <img
                 src={item.imageUrl}
                 alt={`Gambar ${item.title}`}
-                className="w-full h-full object-cover rounded-md"
+                className="w-full h-full object-cover rounded-xl"
               />
             </div>
 
-            {/* Teks */}
-            <div className="w-full sm:w-1/2 flex flex-col justify-center px-3 sm:px-6 py-2 sm:py-4">
-              <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-4 text-[#0C0202]">
+            {/* Konten teks */}
+            <div id={item.title === "Available Template" ? "Template" : undefined} className="w-full sm:w-1/2 flex flex-col justify-center p-4">
+              <h3 className="text-lg font-bold mb-2 text-[#0C0202]">
                 {item.title}
               </h3>
-              <p className="text-xs sm:text-sm text-[#0C0202]">
+              <p className="text-sm text-[#0C0202] leading-relaxed">
                 {item.description}
               </p>
             </div>
           </div>
         ))}
-      </div>
-
-      {/* Card tambahan “Template” */}
-      <div className="flex justify-center mt-8 mb-8">
-        <div className="flex flex-col sm:flex-row items-center justify-center bg-white rounded-md transition duration-300 ease-in-out hover:shadow-xl overflow-hidden p-3 sm:p-4 w-full sm:w-[500px] lg:w-[600px] h-auto">
-          {/* Gambar */}
-          <div className="w-full sm:w-1/2 h-[200px] sm:h-full flex-shrink-0">
-            <img
-              src="/img-12.jpeg"
-              alt="Gambar Template"
-              className="w-full h-full object-cover rounded-md"
-            />
-          </div>
-
-          {/* Teks */}
-          <div id="Template" className="w-full sm:w-1/2 flex flex-col justify-center px-3 sm:px-6 py-2 sm:py-4">
-            <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-4 text-[#0C0202]">
-              Available Template
-            </h3>
-            <p className="text-xs sm:text-sm text-[#0C0202]">
-              Kami menawarkan beragam pilihan desain bingkai dan tata letak yang siap pakai untuk memenuhi setiap kebutuhan kreatif Anda. Dengan Template yang tersedia ini, Anda bisa memilih gaya yang paling sesuai dengan tema acara Anda, mulai dari yang minimalis dan modern hingga yang penuh ornamen.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );
