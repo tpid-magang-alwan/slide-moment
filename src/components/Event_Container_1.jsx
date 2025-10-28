@@ -7,7 +7,7 @@ export default function Event_Container_1() {
   const dateText = "15 Januari 2023";
 
   return (
-    <div className="w-full flex flex-col bg-[#f6f6f6] mb-16">
+    <div className="w-full flex flex-col bg-[#f6f6f6] pb-16">
       <div className="flex w-full h-[280px] md:h-[400] overflow-hidden">
         <img
           src={imageUrl}

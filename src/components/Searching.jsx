@@ -15,7 +15,7 @@ export default function Searching({ eventPhotos }) {
   };
 
   return (
-    <div className="w-full flex flex-col items-center mt-2 px-4">
+    <div className="w-full bg-[#f6f6f6] flex flex-col items-center pt-2 px-4">
       {/* Search bar */}
       <form
         onSubmit={handleSearch}

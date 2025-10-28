@@ -5,55 +5,19 @@ import { FaEye } from "react-icons/fa";
 export default function Event_Container_2() {
   // Data dummy sementara (bisa diganti dari CMS nantinya)
   const sesiData = [
-    {
-      id: 1,
-      image: "/img-1.jpeg",
-      link: "/sesi",
-    },
-    {
-      id: 2,
-      image: "/img-2.jpeg",
-      link: "/sesi/2",
-    },
-    {
-      id: 3,
-      image: "/img-3.jpeg",
-      link: "/sesi/3",
-    },
-    {
-      id: 4,
-      image: "/img-4.jpeg",
-      link: "/sesi/4",
-    },
-    {
-      id: 5,
-      image: "/img-5.jpeg",
-      link: "/sesi/5",
-    },
-    {
-      id: 6,
-      image: "/img-6.jpeg",
-      link: "/sesi/6",
-    },
-    {
-      id: 7,
-      image: "/img-7.jpeg",
-      link: "/sesi/7",
-    },
-    {
-      id: 8,
-      image: "/img-8.jpg",
-      link: "/sesi/8",
-    },
-    {
-      id: 9,
-      image: "/img-9.jpg",
-      link: "/sesi/8",
-    },
+    { id: 1, image: "/img-1.jpeg", link: "/sesi" },
+    { id: 2, image: "/img-2.jpeg", link: "/sesi/2" },
+    { id: 3, image: "/img-3.jpeg", link: "/sesi/3" },
+    { id: 4, image: "/img-4.jpeg", link: "/sesi/4" },
+    { id: 5, image: "/img-5.jpeg", link: "/sesi/5" },
+    { id: 6, image: "/img-6.jpeg", link: "/sesi/6" },
+    { id: 7, image: "/img-7.jpeg", link: "/sesi/7" },
+    { id: 8, image: "/img-8.jpg", link: "/sesi/8" },
+    { id: 9, image: "/img-9.jpg", link: "/sesi/9" },
   ];
 
   return (
-    <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-24 py-12 bg-none">
+    <div className="w-full bg-[#f6f6f6] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-24 py-12 bg-none">
       {sesiData.map((sesi) => (
         <Link
           key={sesi.id}
@@ -73,17 +37,13 @@ export default function Event_Container_2() {
           <div className="w-full flex justify-center py-3">
             <button
               type="button"
-              className="w-full flex justify-center items-center gap-2 bg-[#639EA6] text-white px-5 py-2 rounded-full text-sm font-medium"
+              className="w-full flex justify-center items-center gap-2 bg-[#639EA6] text-white px-5 py-2 rounded-full text-sm font-medium cursor-pointer hover:bg-[#4c848b] transition-colors duration-200"
               onMouseEnter={(e) => {
-                const img = e.currentTarget
-                  .closest(".group")
-                  .querySelector("img");
+                const img = e.currentTarget.closest(".group").querySelector("img");
                 img.classList.add("scale-110");
               }}
               onMouseLeave={(e) => {
-                const img = e.currentTarget
-                  .closest(".group")
-                  .querySelector("img");
+                const img = e.currentTarget.closest(".group").querySelector("img");
                 img.classList.remove("scale-110");
               }}
             >
