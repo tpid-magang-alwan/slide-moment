@@ -22,7 +22,7 @@ export default function Home_Container_2() {
     },
     {
       id: 4,
-      title: "Template",
+      title: "Available Template",
       desc: "Pilih dari berbagai desain bingkai dan tata letak eksklusif untuk mempercantik foto Anda. Buat cetakan foto Anda semakin berkesan dengan desain unik.",
     },
   ];
@@ -31,7 +31,7 @@ export default function Home_Container_2() {
     { thumb: "/img-7.jpeg", full: "/photobooth", alt: "", title: "Photobooth" },
     { thumb: "/img-13.jpg", full: "/instaprint", alt: "", title: "Instaprint" },
     { thumb: "/img-15.jpeg", full: "/photo-move", alt: "", title: "Photo on the Move" },
-    { thumb: "/img-16.jpg", full: "/instaprint#Template", alt: "", title: "Template" }, // 🔗 ubah link Template
+    { thumb: "/img-16.jpg", full: "/instaprint#Template", alt: "", title: "Template" },
   ];
 
   // Fungsi untuk navigasi ke Instaprint + scroll ke id Template
@@ -43,7 +43,7 @@ export default function Home_Container_2() {
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
       }
-    }, 300); // waktu tunggu agar halaman sempat dimuat
+    }, 300);
   };
 
   return (
@@ -53,7 +53,7 @@ export default function Home_Container_2() {
     >
       {/* Bagian Produk */}
       <div className="w-full md:w-1/2 p-4 flex justify-center">
-        <div className="w-[90%] md:w-4/5 max-h-[500px] md:h-[85%] flex flex-col overflow-y-auto">
+        <div className="w-[90%] md:w-4/5 max-h-[500px] md:h-[85%] flex flex-col">
           <h3 className="text-xl sm:text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center md:text-left">
             Our Product
           </h3>
@@ -62,7 +62,7 @@ export default function Home_Container_2() {
             {products.map(({ id, title, desc }) => (
               <div
                 key={id}
-                className="bg-white rounded-xl shadow-lg p-3 sm:p-3 max-w-2xl mx-auto flex items-start space-x-3"
+                className="bg-white rounded-xl p-3 sm:p-3 max-w-2xl mx-auto flex items-start space-x-3"
               >
                 <div className="flex items-center justify-center h-6 w-6 rounded-full border border-white shadow-md text-sm font-semibold text-[#0C0202] bg-gray-50 flex-shrink-0 mt-0.5">
                   {id}
@@ -77,11 +77,10 @@ export default function Home_Container_2() {
       </div>
 
       {/* Bagian Galeri */}
-      <div className="md:w-1/2 justify-center items-center">
-        <div className="grid grid-cols-2 gap-1 w-[85%] mx-auto">
+      <div className="md:w-1/2 justify-center items-center mt-6 md:mt-0"> {/* 🟢 Tambah jarak di mobile */}
+        <div className="grid grid-cols-2 gap-3 sm:gap-2 w-[85%] mx-auto"> {/* 🟢 Tambah gap agar antar box lebih lega */}
           {gallery.map(({ thumb, full, alt, title }, i) =>
             title === "Template" ? (
-              // 🔗 Khusus Template → gunakan tombol custom agar scroll ke id di Instaprint
               <button
                 key={i}
                 onClick={handleTemplateClick}
@@ -100,7 +99,11 @@ export default function Home_Container_2() {
                 </div>
               </button>
             ) : (
-              <Link key={i} to={full} className="relative group overflow-hidden h-50">
+              <Link
+                key={i}
+                to={full}
+                className="relative group overflow-hidden h-50"
+              >
                 <img
                   src={thumb}
                   alt={alt}
