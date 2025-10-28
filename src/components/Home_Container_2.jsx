@@ -34,15 +34,12 @@ export default function Home_Container_2() {
     { thumb: "/img-16.jpg", full: "/instaprint#Template", alt: "", title: "Template" },
   ];
 
-  // Fungsi untuk navigasi ke Instaprint + scroll ke id Template
   const handleTemplateClick = (e) => {
     e.preventDefault();
     navigate("/instaprint");
     setTimeout(() => {
       const section = document.getElementById("Template");
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
+      if (section) section.scrollIntoView({ behavior: "smooth" });
     }, 300);
   };
 
@@ -53,7 +50,8 @@ export default function Home_Container_2() {
     >
       {/* Bagian Produk */}
       <div className="w-full md:w-1/2 p-4 flex justify-center">
-        <div className="w-[90%] md:w-4/5 max-h-[500px] md:h-[85%] flex flex-col">
+        {/* 🟢 Hapus max-h agar konten panjang (teks 4) tidak terpotong */}
+        <div className="w-[90%] md:w-4/5 md:h-[85%] flex flex-col">
           <h3 className="text-xl sm:text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center md:text-left">
             Our Product
           </h3>
@@ -77,8 +75,9 @@ export default function Home_Container_2() {
       </div>
 
       {/* Bagian Galeri */}
-      <div className="md:w-1/2 justify-center items-center mt-6 md:mt-0"> {/* 🟢 Tambah jarak di mobile */}
-        <div className="grid grid-cols-2 gap-3 sm:gap-2 w-[85%] mx-auto"> {/* 🟢 Tambah gap agar antar box lebih lega */}
+      <div className="md:w-1/2 justify-center items-center mt-[20px] sm:mt-[60px] md:mt-0">
+        {/* 🟢 Tambahkan margin top besar agar grid tidak menabrak teks di Android */}
+        <div className="grid grid-cols-2 gap-3 sm:gap-2 w-[85%] mx-auto">
           {gallery.map(({ thumb, full, alt, title }, i) =>
             title === "Template" ? (
               <button
