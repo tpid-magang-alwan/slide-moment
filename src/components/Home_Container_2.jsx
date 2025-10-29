@@ -50,7 +50,6 @@ export default function Home_Container_2() {
     >
       {/* Bagian Produk */}
       <div className="w-full md:w-1/2 p-4 flex justify-center">
-        {/* 🟢 Hapus max-h agar konten panjang (teks 4) tidak terpotong */}
         <div className="w-[90%] md:w-4/5 md:h-[85%] flex flex-col">
           <h3 className="text-xl sm:text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center md:text-left">
             Our Product
@@ -76,19 +75,18 @@ export default function Home_Container_2() {
 
       {/* Bagian Galeri */}
       <div className="md:w-1/2 justify-center items-center mt-[20px] sm:mt-[60px] md:mt-0">
-        {/* 🟢 Tambahkan margin top besar agar grid tidak menabrak teks di Android */}
         <div className="grid grid-cols-2 gap-3 sm:gap-2 w-[85%] mx-auto">
           {gallery.map(({ thumb, full, alt, title }, i) =>
             title === "Template" ? (
               <button
                 key={i}
                 onClick={handleTemplateClick}
-                className="relative group overflow-hidden h-50 cursor-pointer"
+                className="relative group overflow-hidden h-[120px] sm:h-[150px] md:h-[180px] cursor-pointer" // ✅ ubah tinggi proporsional
               >
                 <img
                   src={thumb}
                   alt={alt}
-                  className="w-full h-full align-middle object-cover transition duration-300 group-hover:brightness-110"
+                  className="w-full h-full object-cover transition duration-300 group-hover:brightness-110"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition duration-300"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -101,12 +99,12 @@ export default function Home_Container_2() {
               <Link
                 key={i}
                 to={full}
-                className="relative group overflow-hidden h-50"
+                className="relative group overflow-hidden h-[120px] sm:h-[150px] md:h-[180px]" // ✅ ubah tinggi proporsional
               >
                 <img
                   src={thumb}
                   alt={alt}
-                  className="w-full h-full align-middle object-cover transition duration-300 group-hover:brightness-110"
+                  className="w-full h-full object-cover transition duration-300 group-hover:brightness-110"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition duration-300"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
