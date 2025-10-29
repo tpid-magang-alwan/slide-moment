@@ -15,7 +15,7 @@ export default function Galleries_Container_2() {
       title: "Birthday Party Kevin",
       location: "Cafe Blossom",
       image: "/img-2.jpeg",
-      link: "/event/2",
+      link: "/event",
     },
     {
       id: 3,
