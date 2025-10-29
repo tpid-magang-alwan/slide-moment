@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom"; // ✅ siapkan untuk navigasi internal
+import React from "react"; 
+import { Link } from "react-router-dom";
 
 export default function Home_Container_3() {
   const images = [
@@ -37,11 +37,14 @@ export default function Home_Container_3() {
   return (
     <div className="flex flex-col md:flex-row w-full items-center text-[#0C0202] overflow-hidden my-16 py-8 md:py-0">
       
-      {/* Bagian Kiri: Grid Gambar */}
+      {/* 🟩 Bagian Kiri: Grid Gambar */}
       <div className="md:w-1/2 p-4 flex justify-center items-center">
-        <div className="w-full max-w-[520px] h-[380px] grid grid-cols-5 grid-rows-4 gap-[2px] overflow-hidden">
+        <div className="w-full max-w-[520px] h-auto md:h-[380px] grid grid-cols-5 grid-rows-4 gap-[2px] overflow-hidden">
           {images.map((src, i) => (
-            <div key={i} className="overflow-hidden">
+            <div 
+              key={i} 
+              className="overflow-hidden aspect-square md:aspect-auto" // ✅ persegi di android, persegi panjang di desktop
+            >
               <img
                 src={src}
                 alt={`Gallery ${i + 1}`}
@@ -52,7 +55,7 @@ export default function Home_Container_3() {
         </div>
       </div>
 
-      {/* Bagian Kanan: Teks dan Tombol */}
+      {/* 🟦 Bagian Kanan: Teks dan Tombol */}
       <div className="w-full md:w-1/2 flex justify-center items-center">
         <div className="w-[90%] md:w-4/5 bg-[#ffffff] p-5 sm:p-6 rounded-md flex flex-col">
           <div>
