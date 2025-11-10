@@ -18,3 +18,5 @@ If you are developing a production application, we recommend using TypeScript wi
 =======
 # slide-moment
 >>>>>>> 59609ab67e1facf64531cd9d5111d3ec2a26d6d1
+
+cd ~/Documents/slide\ moment/slidemoment-fe
